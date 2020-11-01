@@ -123,7 +123,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   flex-direction: column;
   background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
   margin: 10px;
-  height: 30vh;
+  height: 50vh;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-bottom: 20px;
@@ -139,7 +139,8 @@ html, body, .grid-container { height: 100%; margin: 0; }
   position: relative;
   background-color: blanchedalmond;
   margin: 5px 10px 5px 10px;
-  padding-left: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
   height: 20vh;
   border-radius: 20px;
 }
@@ -148,12 +149,25 @@ html, body, .grid-container { height: 100%; margin: 0; }
   background-color: #6bb7f5;
   border: solid;
   color: white;
-  padding: 1px ;
+  padding-top: 10px;
   text-align: center;
   font-size: 16px;
   margin: 4px 2px;
   opacity: 0.6;
   transition: 0.3s;
+}
+
+/* styling for average score after trivia quiz */
+.score-average {
+  padding: 40px;
+  margin: 50px;
+  background-color: #9ae7e7;
+  border-radius: 10px;
+  border: solid 5px #ae8b9c;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* styling for leaderboard */
