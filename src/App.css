@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,141 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+header{
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+
+}
+/* Login form */
+.login-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-rows: 0.6fr 1.8fr 0.6fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    ". . . ."
+    ". login login ."
+    ". . . .";
+}
+
+.login { grid-area: login; }
+
+.login {
+    background: #C6EBF6;
+    text-align: center;
+    border: 11px solid #D0D9F5;
+    border-radius: 29px;
+}
+
+.username {
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+}
+
+.login-btn{
+  background-color: rgb(202, 250, 202);
+   margin-top: 5px;
+   border: none;
+  border-radius: 5px;
+}
+
+.login-btn:hover{
+  background-color: rgb(0, 253, 0);
+  border: solid 1px rgb(165, 165, 165)
+}
+
+/* Layout for Trivia Game  */
+
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1.1fr 1.9fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . ."
+    "leaderboard questions questions score"
+    "leaderboard questions questions score";
+}
+
+.questions { grid-area: questions; }
+
+.score { grid-area: score; }
+
+.leaderboard { grid-area: leaderboard; }
+
+
+/* For presentation only, no need to copy the code below */
+/* .grid-container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+/* styling for question */
+.question-container{
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+  margin: 10px;
+  height: 30vh;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 20px;
+}
+
+.question {
+ 
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.answer {
+  position: relative;
+  background-color: blanchedalmond;
+  margin: 5px 10px 5px 10px;
+  padding-left: 10px;
+  height: 20vh;
+  border-radius: 20px;
+}
+
+.answer:hover {
+  background-color: #6bb7f5;
+  border: solid;
+  color: white;
+  padding: 1px ;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+/* styling for leaderboard */
+.leader-board {
+  background-color: blanchedalmond;
+  height: 25vh;
+  margin: 10px 10px 0px 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+/* styling  for Trivia-score Container*/
+.trivia-score {
+  background-color: blanchedalmond;
+  height: 25vh;
+  margin: 10px 20px 0 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
