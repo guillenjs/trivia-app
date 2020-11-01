@@ -9,7 +9,8 @@ export default class TriviaGame extends Component {
         state = {
             questions:[],
             triviaQuiz:[],
-            score: 0
+            score: 0,
+            leaderboard: []
         }
         //for pagination of questions 
         //Make fetch request of questions for all questions questions
@@ -22,6 +23,14 @@ export default class TriviaGame extends Component {
                     questions: questionsArr
                 })
                 this.createQuiz()
+                })
+        
+        fetch('http://localhost:3000/scores')
+                .then(res => res.json())
+                .then(scoreArr => {
+                    this.setState({
+                        leaderboard: scoreArr
+                    })
                 })
         }
 
@@ -71,10 +80,28 @@ export default class TriviaGame extends Component {
             score: 0 
         })
         
+
         this.createQuiz()
     }
 
-
+    handleLeaderBoard = (n) => {
+     
+        fetch('http://localhost:3000/scores', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify({
+                name: n,
+                score: parseInt(this.state.score)
+            })
+        })
+            .then(res => res.json())
+            .then(newScore => console.log(newScore))
+            //update leader board in state after post
+            //sort it in order from highest to least 
+            //update state with new array 
+    }
 
      //In the question component only render one question, first question in state 
     renderQuestion = () => {
@@ -92,17 +119,20 @@ export default class TriviaGame extends Component {
             return <TriviaGameScore 
                         score = {this.state.score} 
                         newQuiz = {this.handleNewQuiz}
+                        handleLeaderBoard = {this.handleLeaderBoard}
                     />
         }
     }
+
+   
     
-     
   
         //Once done reflect score in percentage, ask if you they want to take another quiz.
         // if take another button clicked then create a new quiz
     render() {
        console.log(this.state.triviaQuiz)
        console.log(this.state.score)
+       console.log(this.state.leaderboard)
         return (
             <div>
                 <header><h1>T R I V I A <i>400</i></h1></header>
@@ -116,7 +146,7 @@ export default class TriviaGame extends Component {
                     </div>
 
                     <div className="leaderboard">
-                        <Leaderboard />
+                        <Leaderboard leaderboard = {this.state.leaderboard}/>
                     </div>
                 </div>
             </div>
