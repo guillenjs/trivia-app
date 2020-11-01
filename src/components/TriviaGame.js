@@ -28,18 +28,22 @@ export default class TriviaGame extends Component {
     //make an array with 10 random questions 
     //with none of them repeating and set to state of current quiz 
     createQuiz = () => {
+        let newQuiz = []
+
         for(let i = 0; i < 10; i++){
            let randomItem = this.state.questions[Math.floor(Math.random()*this.state.questions.length)];
 
-            if(this.state.triviaQuiz.includes(randomItem)){
+            if(newQuiz.includes(randomItem)){
                 i -= 1
             }
             else{
-                this.setState({
-                    triviaQuiz:[...this.state.triviaQuiz, randomItem]
-                })
+                newQuiz.push(randomItem)
             }
         }
+
+        this.setState({
+            triviaQuiz: newQuiz
+        })
     }
 
     //once answered add to score +1 or +0
