@@ -85,7 +85,8 @@ export default class TriviaGame extends Component {
     }
 
     handleLeaderBoard = (n) => {
-     
+        let averageScore = (this.state.score/10) * 100
+
         fetch('http://localhost:3000/scores', {
             method: "POST",
             headers: {
@@ -93,14 +94,20 @@ export default class TriviaGame extends Component {
               },
             body: JSON.stringify({
                 name: n,
-                score: parseInt(this.state.score)
+                score: parseInt(averageScore)
             })
         })
             .then(res => res.json())
-            .then(newScore => console.log(newScore))
-            //update leader board in state after post
-            //sort it in order from highest to least 
+            .then(newScore => {
+                console.log(newScore)
+             //update leader board in state after post
+             let updatedLeaderBoard = [...this.state.leaderboard, newScore]
             //update state with new array 
+                this.setState({
+                    leaderboard: updatedLeaderBoard
+                })
+            })
+           
     }
 
      //In the question component only render one question, first question in state 
