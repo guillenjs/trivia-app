@@ -29,7 +29,7 @@ render() {
         
         <div className="login-container">
             <div className="login">
-            <form>
+            {/* <form>
                 <input 
                     placeholder="Username"
                     className="username"
@@ -45,8 +45,9 @@ render() {
                     onChange = {this.handleChange} 
                 ></input>
                     <br></br>
+                    </form> */}
                 <input type="submit" value="Enter" className="login-btn" onClick ={this.handleLogin} />
-            </form>
+          
             </div>
         </div>
     )

@@ -6,11 +6,8 @@ export class TriviaQuestion extends Component {
     state={
         answer: ""
     }
-    //Check if answer is correct or not and send answer to parent component to remove question and add score
-    handleAnswer = (a) => {
-        // let answer = a === this.props.quiz.correct? true:false
-        
 
+    handleAnswer = (a) => {
         this.setState({
             answer: a
         })
@@ -45,18 +42,28 @@ export class TriviaQuestion extends Component {
                 {
                    return <span
                         value = {this.state.answer}
-                        className="answer" 
-                        >CORRECT {this.state.answer}
-                        <button onClick={()=>this.nextQuestion(answer)}>Next</button>
+                        className="answer-true" 
+                        >
+                            <b>CORRECT</b> 
+                                <br></br>
+                            {this.state.answer}
+                                <br></br>    
+                                <br></br> 
+                             <button onClick={()=>this.nextQuestion(answer)} className="next-btn">Next</button>
                     </span>
                 }
             else
                 {
                    return <span
                     value = {this.state.answer}
-                    className="answer" 
-                    >WRONG {this.state.answer}
-                    <button onClick={()=>this.nextQuestion(answer)}>Next</button>
+                    className="answer-false" 
+                    >
+                        <b>WRONG</b> 
+                            <br></br>
+                        <b>Correct:</b> {this.state.answer}
+                            <br></br>    
+                            <br></br>
+                        <button onClick={()=>this.nextQuestion(answer)} className="next-btn">Next</button>
                 </span>
                 }
             

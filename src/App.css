@@ -1,47 +1,14 @@
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  width: 30%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 header{
   width: 100%;
   height: 10vh;
   text-align: center;
   color: #cefafa;
+  padding-bottom: 20px;
 }
 
 body{
@@ -75,9 +42,11 @@ body{
 }
 
 .login-btn{
-  background-color: rgb(202, 250, 202);
+  background-color: rgb(171, 247, 171);
+  height: 60px;
+  width: 100px;
    margin-top: 5px;
-   border: none;
+   border: solid 1px;
   border-radius: 5px;
 }
 
@@ -108,18 +77,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
 .leaderboard { grid-area: leaderboard; }
 
 
-/* For presentation only, no need to copy the code below */
-/* .grid-container * {
-  border: 1px solid red;
-  position: relative;
-}
 
-.grid-container *:after {
-  content:attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
 
 /* styling for question */
 .question-container{
@@ -149,8 +107,34 @@ html, body, .grid-container { height: 100%; margin: 0; }
   border-radius: 20px;
 }
 
+.answer-true {
+  /* position: relative; */
+  background-color: #b0ffb7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 10px 5px 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+  height: 20vh;
+  border-radius: 20px;
+}
+
+.answer-false {
+  /* position: relative; */
+  background-color: #ff6565;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 10px 5px 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+  height: 20vh;
+  border-radius: 20px;
+}
+
 .answer:hover {
-  background-color: #91dbdb;
+  background-color: #93db91;
   border: solid;
   color: white;
   padding-top: 10px;
@@ -174,9 +158,34 @@ html, body, .grid-container { height: 100%; margin: 0; }
   flex-direction: column;
 }
 
+.name-input{
+  border-radius: 10px;
+  border: none;
+}
+
+.score-btn {
+  border-radius: 5px;
+  border: solid 1px;
+  background-color: wheat;
+}
+
+.score-btn:hover{
+  background-color: white;
+}
+
+.new-round-btn {
+  border-radius: 5px;
+  border: solid 1px;
+  background-color: rgb(74, 236, 74);
+}
+
+.new-round-btn:hover{
+  background-color: white;
+}
+
 /* styling for leaderboard */
 .leader-board {
-  background-color: blanchedalmond;
+  background-color: #8baaaa;
   margin: 10px 10px 0px 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   /* border-radius: 10px; */
@@ -191,7 +200,7 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 2px solid #fcec5d;
   text-align: left;
   padding: 8px;
 }
@@ -199,7 +208,8 @@ td, th {
 
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #ae8b9c;
+  color: white;
 }
 
 /* styling  for Trivia-score Container*/
@@ -229,6 +239,8 @@ tr:nth-child(even) {
   color: #C6EBF6;
   
 }
+
+
 
 
 

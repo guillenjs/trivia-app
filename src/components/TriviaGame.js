@@ -139,7 +139,7 @@ export default class TriviaGame extends Component {
        console.log(this.state.leaderboard)
         return (
             <div>
-                <header><h1>T R I V I A <i>400</i></h1></header>
+            
                 <div className="grid-container">
                     <div className="questions">
                         {this.renderQuestion()}
