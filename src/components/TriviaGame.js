@@ -131,11 +131,8 @@ export default class TriviaGame extends Component {
         }
     }
 
-   
-    
   
-        //Once done reflect score in percentage, ask if you they want to take another quiz.
-        // if take another button clicked then create a new quiz
+       
     render() {
        console.log(this.state.triviaQuiz)
        console.log(this.state.score)
@@ -149,7 +146,7 @@ export default class TriviaGame extends Component {
                     </div>
 
                     <div className="score">
-                        <TriviaScore />
+                        <TriviaScore score = {this.state.score}/>
                     </div>
 
                     <div className="leaderboard">

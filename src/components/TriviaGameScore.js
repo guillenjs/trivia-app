@@ -15,6 +15,9 @@ let handleName = (evt) => {
     setName(evt.target.value)
 }
 
+ //Once done reflect score in percentage, ask if you they want to take another quiz.
+        // if take another button clicked then create a new quiz
+        
 let renderScore = () => {
     // setSubmitScore(false)
     let average =  (props.score/10) * 100

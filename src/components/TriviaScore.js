@@ -1,9 +1,16 @@
 import React from 'react'
 
-export default function TriviaScore() {
+export default function TriviaScore(props) {
+    
+
     return (
         <div className = 'trivia-score'>
-            hello
+              current score
+              <br></br>
+              <br></br>
+            <div className="current-score">
+                {props.score}/10
+            </div>
         </div>
     )
 }
