@@ -1,5 +1,5 @@
 
-# Tandem 400
+# Trivia 400
 
 Tandem 400 is an application for user to take trivia quizzes and further their knowledge. A user can submit answer and see the right answer if they got it wrong. At the end of the quiz they will have a chance to add their name to leaderboard in order to keep track their score. 
 
