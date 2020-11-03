@@ -19,7 +19,7 @@ Trivia 400 is an application for user to take trivia quizzes and further their k
 
 ## Using application
 
-    Once installed you can enter application and playing trivia games
+    Once installed you can enter application and start playing trivia games
 
 
 ## Tech Stack    
