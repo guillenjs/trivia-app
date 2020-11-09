@@ -4,6 +4,8 @@ import Leaderboard from './Leaderboard'
 import TriviaScore from './TriviaScore'
 import TriviaGameScore from './TriviaGameScore'
 
+const baseURL = process.env.REACT_APP_BASE_API_URL
+
 
 export default class TriviaGame extends Component {
         state = {
@@ -12,10 +14,13 @@ export default class TriviaGame extends Component {
             score: 0,
             leaderboard: []
         }
+
+        
         //for pagination of questions 
         //Make fetch request of questions for all questions questions
     componentDidMount() {
-        fetch('http://localhost:3000/questions')
+        
+        fetch(`${baseURL}questions`)
             .then(res => res.json())
             .then(questionsArr => {
              
@@ -25,7 +30,7 @@ export default class TriviaGame extends Component {
                 this.createQuiz()
                 })
         
-        fetch('http://localhost:3000/scores')
+        fetch(`${baseURL}scores`)
                 .then(res => res.json())
                 .then(scoreArr => {
                     this.setState({
